@@ -37,10 +37,9 @@ db.applications = require('../models/applications.js')(sequelize, Sequelize);
 db.disbursementRequests = require('../models/disbursementRequests.js')(sequelize, Sequelize);
 
 /* Associations */
-db.profiles.belongsTo(db.users);
 db.bankAccounts.belongsTo(db.users)
 db.applications.belongsTo(db.users);
-db.users.hasMany(db.applications);
+db.profiles.hasMany(db.applications);
 db.disbursementRequests.belongsTo(db.applications);
 db.applications.hasMany(db.disbursementRequests);
 
