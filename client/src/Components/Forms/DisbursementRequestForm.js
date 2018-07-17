@@ -92,11 +92,11 @@ class DisbursementRequestForm extends React.Component {
 
 					<TextField
 						required
-						id="amount"
-						label="Amount to be Disbursed"
+						id="fundsRequested"
+						label="Funds Requested"
 						className={classes.textField}
-						value={this.state.amount}
-						onChange={this.handleChange('amount')}
+						value={this.state.fundsRequested}
+						onChange={this.handleChange('fundsRequested')}
 						style = {{width: 457.5}}
 						margin="normal"
 					/>

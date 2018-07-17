@@ -8,6 +8,7 @@ import UserLogin from './Components/Authentication/UserLogin';
 import UserTemplate from "./Components/UserTemplate/UserTemplate"
 import NotFound from "./Components/UserTemplate/NotFound"
 import Callback from "./Components/UserTemplate/Callback"
+import AdminTemplate from "./Components/AdminTemplate/AdminTemplate"
 
 
 
@@ -34,6 +35,18 @@ class App extends Component {
 			break;
 		case "disbursements": 
 			mainComponent = <UserTemplate {...this.props}/>
+			break;
+		case "admin": 
+		mainComponent = this.props.auth.isAuthenticated() ? <AdminTemplate {...this.props} /> : <UserLogin {...this.props}/>
+			break;
+		case "admin/users": 
+			mainComponent = <AdminTemplate {...this.props}/>
+			break;
+		case "admin/applications": 
+			mainComponent = <AdminTemplate {...this.props}/>
+			break;
+		case "admin/disbursements": 
+			mainComponent = <AdminTemplate {...this.props}/>
 			break;
 		default:
 			mainComponent = <NotFound {...this.props}/>
