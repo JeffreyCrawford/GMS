@@ -1,0 +1,44 @@
+{
+  "name": "grant-management",
+  "version": "1.0.0",
+  "description": "Grant application and management application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeffreyCrawford/GMS.git"
+  },
+  "author": "Jeff Crawford",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JeffreyCrawford/GMS/issues"
+  },
+  "homepage": "https://github.com/JeffreyCrawford/GMS#readme",
+  "dependencies": {
+    "@casl/ability": "^2.4.2",
+    "@casl/react": "^0.7.1",
+    "@material-ui/core": "^1.4.0",
+    "@material-ui/icons": "^1.1.0",
+    "auth0-js": "^9.7.2",
+    "bcrypt": "^3.0.0",
+    "dotenv": "^6.0.0",
+    "es6": "0.0.7",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "history": "^4.7.2",
+    "jwt-decode": "^2.2.0",
+    "morgan": "^1.9.0",
+    "mysql2": "^1.5.3",
+    "nodemailer": "^4.6.7",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "react-bootstrap": "^0.32.1",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "sequelize": "^4.38.0"
+  },
+  "proxy": "localhost:3001"
+}
