@@ -132,7 +132,7 @@ class ProfileForm extends React.Component {
 				<TextField
 					required
 					id="address"
-					label="Community Mailing Address"
+					label="Organization Mailing Address"
 					className={classes.textField}
 					value={this.state.address}
 					onChange={this.handleChange('address')}
