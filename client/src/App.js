@@ -3,7 +3,6 @@
 import React, { Component } from 'react';
 import { Navbar, Button } from 'react-bootstrap';
 import './App.css';
-import Auth from "./Components/Authentication/Auth"
 import UserLogin from './Components/Authentication/UserLogin';
 import UserTemplate from "./Components/UserTemplate/UserTemplate"
 import NotFound from "./Components/UserTemplate/NotFound"
@@ -19,7 +18,7 @@ class App extends Component {
 	let mainComponent = "";
 	switch(this.props.location) {
 		case "":
-			mainComponent = this.props.auth.isAuthenticated() ? <UserTemplate {...this.props} /> : <UserLogin {...this.props}/>
+			mainComponent =  <UserTemplate {...this.props} /> 
 			break;
 		case "login":
 			mainComponent = <UserLogin {...this.props}/>;
@@ -36,8 +35,9 @@ class App extends Component {
 		case "disbursements": 
 			mainComponent = <UserTemplate {...this.props}/>
 			break;
+			
 		case "admin": 
-		mainComponent = this.props.auth.isAuthenticated() ? <AdminTemplate {...this.props} /> : <UserLogin {...this.props}/>
+		mainComponent = <AdminTemplate {...this.props} /> 
 			break;
 		case "admin/users": 
 			mainComponent = <AdminTemplate {...this.props}/>

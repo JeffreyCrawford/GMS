@@ -31,7 +31,7 @@ var fixtures = [
 			groupId: 2,
 			group: "admin"
 		}
-	}
+	},
 ];
 
 
@@ -75,8 +75,6 @@ db.users.belongsTo(db.userGroups);
 db.userGroups.hasMany(db.users)
 
 
-//Relations
-/* db.pets.belongsTo(db.owners);
-db.owners.hasMany(db.pets); */
+
 
 module.exports = db;

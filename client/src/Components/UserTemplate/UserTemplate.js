@@ -105,7 +105,7 @@ render() {
         </List>
         <Divider />
         <List component="nav">
-            <ListItem button onClick={this.props.auth.logout}>
+            <ListItem button>
             <ListItemText primary="Log Out" />
             </ListItem>
             <ListItem button component="a" href="https://www.google.com">

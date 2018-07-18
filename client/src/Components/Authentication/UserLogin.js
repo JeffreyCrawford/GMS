@@ -64,7 +64,7 @@ handleClickShowPassword = () => {
 	this.setState(state => ({ showPassword: !state.showPassword }));
 };
 
-handleSubmit = event => {
+login = event => {
 
 }
 
@@ -138,7 +138,7 @@ render() {
 					Create Account
 				</Button>
 
-				<Button type="submit" variant="contained" color="primary" className={classes.buttonLogin}>
+				<Button variant="contained" color="primary" onClick={this.login} className={classes.buttonLogin}>
 					Login
 				</Button>
 

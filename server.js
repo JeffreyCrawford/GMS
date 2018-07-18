@@ -8,8 +8,10 @@ const router = require("./routes/index");
 const app = express();
 const PORT = process.env.PORT || 3001;
 const nodemailer = require("./config/nodemailer.js")
-const expressSession = require('express-session')
 const passport = require("passport")
+const session = require('express-session')
+const authRoute = require('./routes/auth.js')(app);
+require('./config/passport.js')(passport, db.user);
 
 /* Routing and request configuration */
 app.use(morgan('combined'));
@@ -20,12 +22,12 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(expressSession);
+app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true})); // session secret
 app.use(passport.initialize());
 app.use(passport.session());
 
-router(app, db, nodemailer);
-
+router(app, db);
+ 
 
 /* Sync to Sequelize and start listening */
 db.sequelize.sync().then(() => {

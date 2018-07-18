@@ -1,15 +1,34 @@
 var db = require("../config/db")
 const nodemailer = require("../config/nodemailer")
 const bcrypt = require('bcrypt');
+const passport = require("passport")
 
 module.exports = (app, db, nodemailer) => {
     /* Get users */
-    app.get("/api/users", function(req, res) {
+    app.get("/api/users", 
+
+    passport.authenticate("local-signup", {
+        successRedirect: '/',
+        failureRedirect: '/login',
+    }),
+
+
+
+    function(req, res) {
         db.users.findAll({
+        }).then(function (data) {
+            res.send(data)
+        })
+
+    });
+
+    app.get("/api/userGroups", function(req, res) {
+        db.userGroups.findAll({
           }).then(function (data) {
             res.send(data)
           });
     });
+    
 
     /* Create user */
     app.post("/api/users", function(req, res) {

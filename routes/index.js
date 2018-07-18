@@ -4,8 +4,8 @@ const routes = [
 
 
 /* Route connections */
-module.exports = function router(app, db, nodemailer) {
+module.exports = function router(app, passport, db, nodemailer) {
 	return routes.forEach((route) => {
-	route(app, db, nodemailer);
+	route(app, passport, db, nodemailer);
 	});
 };

@@ -11,9 +11,7 @@ import {
     Redirect
 } from 'react-router-dom'   
 import UserLogin from "./Components/Authentication/UserLogin"
-import Auth from "./Components/Authentication/Auth"
 
-const auth = new Auth();
 
 let state = {};
 window.setState = (changes) => {
@@ -28,7 +26,6 @@ window.setState = (changes) => {
 let initialState = {
     name: "jeff",
     location: location.pathname.replace(/^\/?|\/$/g, ""),
-    auth
 }
 
 window.setState(initialState)
