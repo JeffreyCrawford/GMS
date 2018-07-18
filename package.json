@@ -28,6 +28,7 @@
     "es6": "0.0.7",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
+    "fs": "0.0.1-security",
     "history": "^4.7.2",
     "jwt-decode": "^2.2.0",
     "morgan": "^1.9.0",
@@ -35,10 +36,12 @@
     "nodemailer": "^4.6.7",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
+    "path": "^0.12.7",
     "react-bootstrap": "^0.32.1",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
-    "sequelize": "^4.38.0"
+    "sequelize": "^4.38.0",
+    "sequelize-fixtures": "^0.7.0"
   },
   "proxy": "localhost:3001"
 }
