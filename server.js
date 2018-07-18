@@ -8,6 +8,8 @@ const router = require("./routes/index");
 const app = express();
 const PORT = process.env.PORT || 3001;
 const nodemailer = require("./config/nodemailer.js")
+const expressSession = require('express-session')
+const passport = require("passport")
 
 /* Routing and request configuration */
 app.use(morgan('combined'));
@@ -17,6 +19,10 @@ app.use((req, res, next) => {
   res.header('Content-Type', 'application/json');
   next();
 });
+
+app.use(expressSession);
+app.use(passport.initialize());
+app.use(passport.session());
 
 router(app, db, nodemailer);
 
